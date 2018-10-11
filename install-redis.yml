@@ -23,3 +23,5 @@
         with_items:
           - python-mysqldb
           - mysql-server
+      - name: instalacion de redis
+        apt: name=redis-server update_cache=yes
