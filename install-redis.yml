@@ -1,0 +1,25 @@
+ - hosts: wedservers
+   become: true
+   tasks:
+
+      - name: instalacion de Apache2
+        apt: name={{item}} state=present update_cache=true
+
+        with_items:
+                - apache2
+                - libapache2-mod-wsgi
+                - python-pip
+                - python-virtualenv
+
+        notify:
+                - "Reinicia el servidor web"
+
+      - name: Iniciamos Apache2
+        service: name=apache2 state=started enabled=yes
+
+      - name: instalacion de mysql
+        apt: name={{name}}
+
+        with_items:
+          - python-mysqldb
+          - mysql-server
