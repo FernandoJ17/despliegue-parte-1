@@ -1,1 +1,1 @@
-# despliegue-parte-1
+# primera parte del despliegue de la plataforma Moodle
