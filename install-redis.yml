@@ -12,7 +12,7 @@
                 - python-virtualenv
 
         notify:
-                - "Reinicia el servidor web"
+                - "Reiniciamos el servicio de apache2"
 
       - name: Iniciamos Apache2
         service: name=apache2 state=started enabled=yes
